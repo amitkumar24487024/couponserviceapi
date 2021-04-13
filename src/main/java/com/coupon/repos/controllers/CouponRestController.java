@@ -1,6 +1,7 @@
 package com.coupon.repos.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +26,7 @@ public class CouponRestController {
 
 	@RequestMapping(value = "/coupon/{code}", method = RequestMethod.GET)
 	public Coupon create(@PathVariable("code") String code) {
+		System.out.println("finding coupon value");
 		return repository.findByCode(code);
 
 	}
